@@ -4,7 +4,20 @@ import "fmt"
 
 func main() {
 	// uninitialized slice is nil
-	var nums []int
-	fmt.Println(nums)        // []
-	fmt.Println(nums == nil) // true
+	// var nums []int
+	// fmt.Println(nums)        // []
+	// fmt.Println(nums == nil) // true
+
+	// make(type, len, cap)
+	var nums1 = make([]int, 0, 2)
+	fmt.Println(nums1) // []
+	
+	nums1 = append(nums1, 1)
+	fmt.Println(nums1, cap(nums1)) // [1] 2
+	
+	nums1 = append(nums1, 2, 3)
+	fmt.Println(nums1, cap(nums1)) // [1 2 3] 4
+	nums1 = append(nums1, 2, 3, 4, 5)
+	fmt.Println(nums1, cap(nums1)) // [1 2 3 2 3 4 5] 8
+
 }
