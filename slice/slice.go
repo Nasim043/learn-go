@@ -20,4 +20,12 @@ func main() {
 	nums1 = append(nums1, 2, 3, 4, 5)
 	fmt.Println(nums1, cap(nums1)) // [1 2 3 2 3 4 5] 8
 
+	// copy
+	src := []int{1,2,3}
+	dest := make([]int, len(src))
+
+	// copy(dest, src)
+	copy(dest, src)
+	fmt.Println(dest) // [1 2 3]
+
 }
